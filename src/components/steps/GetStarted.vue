@@ -60,7 +60,7 @@
             label="Proceed"
             padding="sm md"
             text-color="dark"
-            :class="['q-my-lg', $q.screen.gt.sm ? 'w-405' : ' full-width']"
+            :class="['q-my-lg', $q.screen.gt.sm ? 'w-405' : 'full-width']"
           />
         </div>
       </div>
@@ -89,6 +89,11 @@ export default defineComponent({
   components: { TopBar },
   emits: ['step:changed', 'data:ready'],
   props: {
+    data: {
+      type: Object,
+      default: null,
+      required: false
+    },
     step: {
       type: Number,
       required: true
@@ -112,7 +117,16 @@ export default defineComponent({
           this.$emit('data:ready', this.payload)
         }
       })
+    },
+    init () {
+      if (!!this.$props.data) {
+        this.payload.firstname = this.$props.data.firstname
+        this.payload.lastname = this.$props.data.lastname
+      }
     }
+  },
+  mounted () {
+    this.init()
   }
 })
 </script>
