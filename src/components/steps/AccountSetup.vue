@@ -1,6 +1,6 @@
 <template>
   <div class="row" style="padding-top: 22px;">
-    <div class="col-12 q-pa-md q-pa-md-xl">
+    <div class="col-12 q-pa-md q-px-md-xl">
       <top-bar :stacked="$q.screen.lt.md" :step="step" @step:change="emitStepChange" />
       <div class="row justify-center pt-40">
         <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center">
