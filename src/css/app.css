@@ -2,3 +2,96 @@
 body {
   font-family: 'Space Grotesk', sans-serif;
 }
+
+body.body--dark {
+  background: #121212
+}
+
+.rad-10 {
+  border-radius: 10px !important;
+}
+
+.rad-20 {
+  border-radius: 10px !important;
+}
+
+.rad-40 {
+  border-radius: 40px !important;
+}
+
+.pt-40 {
+  padding-top: 40px;
+}
+
+.w-405 {
+  width: 100%;
+  max-width: 405px;
+}
+
+.t-30 {
+  font-size: 30px;
+  line-height: 45px;
+}
+
+.q-stepper__step .q-stepper__step-content .q-stepper__step-inner {
+  padding: 0px;
+}
+.q-item__section--main > .q-item__section--side {
+  padding-left: 8px;
+}
+.q-item__section--side {
+  padding-right: 8px;
+}
+.q-item__section--avatar {
+  min-width: 50px;
+}
+
+.text-brand-primary {
+  background: linear-gradient(109deg, #FBDA61 0%, rgba(255, 90, 205, 0.84) 86.08%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-brand-primary {
+  background: linear-gradient(109deg, #FBDA61 0%, rgba(255, 90, 205, 0.84) 86.08%);
+}
+
+.text-brand-primary-1 {
+  background: linear-gradient(109deg, #FBDA61 0%, rgba(255, 90, 205, 0.84) 86.08%) !important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-brand-primary-1 {
+  background: linear-gradient(109deg, #FBDA61 0%, rgba(255, 90, 205, 0.84) 86.08%) !important;
+  -webkit-background-clip: padding-box;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-brand-green {
+  color: #76f368 !important;
+}
+.bg-brand-green {
+  background: #76f368 !important;
+}
+.text-brand-green-1 {
+  color: #445742 !important;
+}
+.bg-brand-green-1 {
+  background: #445742 !important;
+}
+
+.card-selected {
+  background: linear-gradient(#1e1e1e, #1e1e1e) padding-box,
+               linear-gradient(109deg, #FBDA61 0%, rgba(255, 90, 205, 0.84) 86.08%);
+  border-radius: 20px;
+  border: 1px solid transparent;
+}
+.card-selected:hover {
+  background: #292929;
+  background: linear-gradient(#292929, #292929) padding-box,
+               linear-gradient(109deg, #FBDA61 0%, rgba(255, 90, 205, 0.84) 86.08%);
+  border-radius: 20px;
+  border: 1px solid transparent;
+}
