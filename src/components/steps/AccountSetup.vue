@@ -1,6 +1,6 @@
 <template>
   <div class="row" style="padding-top: 22px;">
-    <div class="col-12 q-pa-md">
+    <div class="col-12 q-pa-md q-pa-md-xl">
       <top-bar :stacked="$q.screen.lt.md" :step="step" @step:change="emitStepChange" />
       <div class="row justify-center pt-40">
         <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center">
@@ -205,7 +205,7 @@
           />
         </div>
       </div>
-      <div class="row justify-center text-body1 q-gutter-x-md q-pl-md-xl q-pb-md q-my-xl">
+      <div class="row justify-center text-body1 q-gutter-x-md q-pt-xl q-pb-lg q-pb-md-none q-mt-xl">
         <a href="" class="text-grey-6" style="text-decoration: none;">Privacy Policy</a>
         <a href="" class="text-grey-6" style="text-decoration: none;">Terms</a>
       </div>
