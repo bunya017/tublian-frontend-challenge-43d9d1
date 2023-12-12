@@ -52,6 +52,7 @@
             placeholder="Password"
             v-model="payload.password"
             :class="[$q.screen.gt.sm ? 'w-405' : '']"
+            :rules="[val => !!val || 'This field is required!']"
           >
             <template v-slot:append>
               <q-icon

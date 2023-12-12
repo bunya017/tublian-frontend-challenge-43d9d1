@@ -19,18 +19,20 @@
           dense
           no-caps
           padding="0px xs"
+          :disable="step < 2"
           label="2: Create Account"
           @click="emitStepChange(2)"
-          :color="step >= 2 ? 'brand-primary' : 'grey-8'"
+          :color="step >= 2 ? 'brand-primary' : 'grey-6'"
         />
         <q-btn
           flat
           dense
           no-caps
           padding="0px xs"
+          :disable="step < 3"
           label="3: Account Setup"
           @click="emitStepChange(3)"
-          :color="step >= 3 ? 'brand-primary' : 'grey-8'"
+          :color="step >= 3 ? 'brand-primary' : 'grey-6'"
         />
         <q-btn
           flat
@@ -38,8 +40,9 @@
           no-caps
           padding="0px xs"
           label="4. Payment"
+          :disable="step < 4"
           @click="emitStepChange(4)"
-          :color="step == 4 ? 'brand-primary' : 'grey-8'"
+          :color="step == 4 ? 'brand-primary' : 'grey-6'"
         />
       </div>
     </div>
