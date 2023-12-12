@@ -28,6 +28,11 @@ body.body--dark {
   max-width: 405px;
 }
 
+.w-580 {
+  width: 100%;
+  max-width: 580px;
+}
+
 .t-30 {
   font-size: 30px;
   line-height: 45px;
@@ -44,6 +49,9 @@ body.body--dark {
 }
 .q-item__section--avatar {
   min-width: 50px;
+}
+.q-dialog__backdrop {
+  backdrop-filter: blur(50px);
 }
 
 .text-brand-primary {

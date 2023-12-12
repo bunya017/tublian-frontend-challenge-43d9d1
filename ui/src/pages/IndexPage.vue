@@ -70,6 +70,7 @@
 
 <script>
 import { defineComponent } from 'vue'
+import { createMetaMixin } from 'quasar'
 
 import CreateAccount from 'components/steps/CreateAccount.vue'
 import AccountSetup from 'components/steps/AccountSetup.vue'
@@ -77,8 +78,15 @@ import PaymentStep from 'components/steps/PaymentStep.vue'
 import GetStarted from 'components/steps/GetStarted.vue'
 
 
+const metaData = {
+  script: {
+    stripeScript: { src: 'https://js.stripe.com/v3/' }
+  }
+}
+
 export default defineComponent({
   name: 'IndexPage',
+  mixins: [createMetaMixin(metaData)],
   components: { AccountSetup, CreateAccount, GetStarted, PaymentStep },
   data () {
     return {
