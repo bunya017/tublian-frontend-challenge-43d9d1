@@ -267,18 +267,18 @@ export default defineComponent({
   components: { AccountSetup, CreateAccount, GetStarted, PaymentStep },
   data () {
     return {
-      step: 4,
+      step: 1,
       loading: false,
       stripeDialog: false,
       successDialog: false,
       payload: {
-        email: 'gfg@vbnv.com',
-        password: 'ghfghWW##$$$$%',
-        lastname: 'gjfhgh',
-        firstname: 'ghfghfg',
-        plan: 'business',
+        plan: '',
+        email: '',
+        purpose: '',
+        password: '',
+        lastname: '',
+        firstname: '',
         interval: 'month',
-        purpose: 'personal',
         payment_amount: null
       }
     }
