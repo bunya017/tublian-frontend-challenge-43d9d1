@@ -16,9 +16,9 @@
             no-caps
             unelevated
             label="Monthly"
-            @click="payment = 'monthly'"
+            @click="interval = 'month'"
             class="col text-body1 text-weight-bold"
-            :color="payment === 'monthly' ? 'brand-primary' : 'dark'"
+            :color="interval === 'month' ? 'brand-primary' : 'dark'"
           />
           <div class="col-auto">
             <div style="width: 4px !important;"></div>
@@ -26,9 +26,9 @@
           <q-btn
             no-caps
             unelevated
-            @click="payment = 'annually'"
+            @click="interval = 'year'"
             class="col text-body1 text-weight-bold"
-            :color="payment === 'annually' ? 'brand-primary' : 'dark'"
+            :color="interval === 'year' ? 'brand-primary' : 'dark'"
           >
             <div class="row justify-center items-center text-weight-bold">
               Annually
@@ -101,6 +101,8 @@
               label="Subscribe"
               text-color="dark"
               style="width: 261px;"
+              @click="emitStepData"
+              :disable="plan !== 'pro'"
             />
           </div>
         </q-card>
@@ -175,6 +177,8 @@
               label="Subscribe"
               text-color="dark"
               style="width: 261px;"
+              @click="emitStepData"
+              :disable="plan !== 'business'"
             />
           </div>
         </q-card>
@@ -239,17 +243,6 @@
                 Priority support with 24/7 availability.
               </div>
             </div>
-            <div class="q-pb-md text-center absolute-bottom">
-              <q-btn
-                no-caps
-                rounded
-                unelevated
-                color="primary"
-                label="Subscribe"
-                text-color="dark"
-                style="width: 261px;"
-              />
-            </div>
           </div>
           <div class="q-pb-md text-center absolute-bottom">
             <q-btn
@@ -287,32 +280,56 @@ export default defineComponent({
       type: Number,
       required: true
     },
-    data: {
-      type: Object,
-      default: null,
-      required: true
+    planProp: {
+      type: String,
+      default: '',
+      required: false
+    },
+    intervalProp: {
+      type: String,
+      default: '',
+      required: false
     }
   },
   data () {
     return {
       plan: '',
-      payment: 'monthly',
-      payload: {
-        email: '',
-        password: ''
+      interval: 'month'
+    }
+  },
+  computed: {
+    paymentAmount () {
+      const COST = {
+        pro: 1999,
+        business: 4999
       }
+      let amount = COST[this.plan]
+      if (this.interval === 'year') {
+        amount *= (12 * 0.8)
+      }
+      return Math.trunc(amount)
+    }
+  },
+  watch: {
+    'intervalProp' (newVal, oldVal) {
+      this.interval = newVal
     }
   },
   methods: {
     emitStepChange (step) {
       this.$emit('step:changed', step)
     },
-    emitFormData () {
-      this.$emit('data:ready', this.payload)
+    emitStepData () {
+      const payload = {
+        plan: this.plan,
+        interval: this.interval,
+        payment_amount: this.paymentAmount
+      }
+      this.$emit('data:ready', payload)
     },
     init () {
-      this.payload.email = !!this.$props.data.email ? this.$props.data.email : ''
-      this.payload.password = !!this.$props.data.password ? this.$props.data.password : ''
+      this.plan = !!this.$props.planProp ? this.$props.planProp : ''
+      this.interval = !!this.$props.intervalProp ? this.$props.intervalProp : 'monthly'
     }
   },
   mounted () {

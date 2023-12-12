@@ -201,6 +201,7 @@
             padding="sm md"
             color="primary"
             text-color="dark"
+            @click="emitStepmData"
             :class="['q-mt-xl', $q.screen.gt.sm ? 'w-405' : 'full-width']"
           />
         </div>
@@ -236,23 +237,18 @@ export default defineComponent({
   },
   data () {
     return {
-      purpose: '',
-      payload: {
-        email: '',
-        password: ''
-      }
+      purpose: ''
     }
   },
   methods: {
     emitStepChange (step) {
       this.$emit('step:changed', step)
     },
-    emitFormData () {
-      this.$emit('data:ready', this.payload)
+    emitStepmData () {
+      this.$emit('data:ready', { purpose: this.purpose })
     },
     init () {
-      this.payload.email = !!this.$props.data.email ? this.$props.data.email : ''
-      this.payload.password = !!this.$props.data.password ? this.$props.data.password : ''
+      this.purpose = !!this.$props.data.purpose ? this.$props.data.purpose : ''
     }
   },
   mounted () {
