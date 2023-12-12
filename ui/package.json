@@ -1,8 +1,8 @@
 {
-  "name": "tublian-customer-onboarding-frontend-challenge-15143d9238402d1",
+  "name": "tublian-frontend-challenge-15143d9238402d1",
   "version": "0.0.1",
   "description": "Customer Onboarding Application",
-  "productName": "Tublian Customer Onboarding Frontend Challenge",
+  "productName": "Customer Onboarding | Tublian",
   "author": "Bunyaminu Sani <bunyaminu007@hotmail.co.uk>",
   "private": true,
   "scripts": {
