@@ -9,6 +9,12 @@ yarn
 npm install
 ```
 
+### Required Environment Variables
+```bash
+API ============> Backend API
+STRIPE_KEY =====> Publishable key from your Stripe dashboard
+```
+
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
 ```bash
 quasar dev
@@ -29,7 +35,6 @@ yarn format
 # or
 npm run format
 ```
-
 
 
 ### Build the app for production
