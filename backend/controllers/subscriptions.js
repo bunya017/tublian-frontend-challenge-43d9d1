@@ -1,6 +1,7 @@
+const config = require('../utils/config')
 const subscriptionsRouter = require('express').Router()
 const Subscription = require('../models/subscription')
-const stripe = require('stripe')('sk_test_51OK3eXEklrH6MmXorllq4ooK6TYnfY8mc8QCpVW6u1lxPJUUfF5qYJq3NkZKG7GFxKVlidksRLY2NwQJPFT9q9Yt00UwnCRUpC')
+const stripe = require('stripe')(config.STRIPE_KEY)
 
 
 const YOUR_DOMAIN = 'http://localhost:4000'
