@@ -178,9 +178,9 @@
                 <!-- Elements will create form elements here -->
               </div>
 
-              <div class="q-pt-lg q-pb-md text-grey-4">
-                By clicking below, you agree to our <span class="text-primary">Terms, Privacy Policy</span>
-                and <span class="text-primary">Automatic Renewal</span>. Tublian will charge you
+              <div class="q-pt-lg q-pb-md text-grey-4 text-body1">
+                By clicking below, you agree to our <span class="text-primary text-weight-bold">Terms, Privacy Policy</span>
+                and <span class="text-brand-blue text-weight-bold">Automatic Renewal</span>. Tublian will charge you
                 ${{ amountToBePaid }} (plus Tax) each month until you cancel you subscription in account settings.
               </div>
               <q-btn

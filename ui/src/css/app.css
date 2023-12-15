@@ -89,6 +89,12 @@ body.body--dark {
 .bg-brand-green-1 {
   background: #445742 !important;
 }
+.text-brand-blue {
+  color: #91c3fd !important;
+}
+.bg-brand-blue {
+  background: #91c3fd !important;
+}
 
 .card-selected {
   background: linear-gradient(#1e1e1e, #1e1e1e) padding-box,
